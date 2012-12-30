@@ -22,6 +22,10 @@ Bio.PDB now has a QCPSuperimposer module using the Quaternion Characteristic
 Polynomial algorithm for superimposing structures. This is a fast alternative
 to the existing SVDSuperimposer code using singular value decomposition.
 
+The multiple-sequence-alignment object used by Bio.AlignIO etc now supports
+a per-column annotation dictionary, useful for richly annotated alignments
+in the Stockholm/PFAM format.
+
 Additionally, a number of small bugs have been fixed with further additions
 to the test suite, and there has been further work on conforming to the
 Python PEP8 standard coding style.
@@ -350,9 +354,8 @@ letter amino acid codes into one using the more common one letter codes. This
 acts as the inverse of the existing seq3 function.
 
 The multiple-sequence-alignment object used by Bio.AlignIO etc now supports
-an annotation dictionary. Additional support for per-column annotation is
-planned, with addition and splicing to work like that for the SeqRecord
-per-letter annotation.
+generic and per-column annotation dictionaries, much like the generic and
+per-letter annotation dictionaries of the SeqRecord object.
 
 A new warning, Bio.BiopythonExperimentalWarning, has been introduced. This
 marks any experimental code included in the otherwise stable release. Such
